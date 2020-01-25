@@ -1,0 +1,23 @@
+{
+  "name": "reimagined-telegram",
+  "version": "1.0.0",
+  "description": "test API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "start:dev": "nodemon server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HBMattoon/reimagined-telegram.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HBMattoon/reimagined-telegram/issues"
+  },
+  "homepage": "https://github.com/HBMattoon/reimagined-telegram#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
