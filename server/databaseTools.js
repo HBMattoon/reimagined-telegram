@@ -41,10 +41,36 @@ const makeAppointment = (info, cb) => {
   }
 }
 
+const docAppointments = (name, date, cb) => {
+  client.query(
+    `select * from appointments where doctorFullName='${name}' and date='${date}';`
+  )
+  .then(res => {
+    cb(null, res.rows);
+  })
+  .catch(err => {
+    cb(err, null);
+  })
+}
+
+const deleteAppointment = (info, cb) => {
+  client.query(
+    `delete from appointments where doctorFullName='${info.doctorFullName}' and date='${info.date}' and time='${info.time}' and patientFirstName='${info.patientFirstName}' and patientLastName='${info.patientLastName}';`
+  )
+  .then(res => {
+    cb(null, res);
+  })
+  .catch(err => {
+    cb(err, null);
+  })
+}
+
 
 module.exports = {
   listDoctors,
   makeAppointment,
+  docAppointments,
+  deleteAppointment
 }
 
 
